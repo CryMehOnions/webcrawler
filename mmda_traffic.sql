@@ -1,5 +1,5 @@
-CREATE DATABASE  IF NOT EXISTS `mmda_traffic` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `mmda_traffic`;
+CREATE DATABASE  IF NOT EXISTS mmda_traffic /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE mmda_traffic;
 -- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
 --
 -- Host: localhost    Database: mmda_traffic
@@ -18,24 +18,24 @@ USE `mmda_traffic`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `entries`
+-- Table structure for table entries
 --
 
-DROP TABLE IF EXISTS `entries`;
+DROP TABLE IF EXISTS entries;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `entries` (
-  `entry_id` int(11) NOT NULL AUTO_INCREMENT,
-  `location_road` longtext NOT NULL,
-  `location_bound` tinytext NOT NULL,
-  `location_area` mediumtext NOT NULL,
-  `traffic` tinytext NOT NULL,
-  `timestamp` mediumtext NOT NULL,
-  `guid` bigint(20) NOT NULL,
-  `update_timestamp` datetime DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`entry_id`),
-  UNIQUE KEY `id_UNIQUE` (`entry_id`),
-  UNIQUE KEY `guid_UNIQUE` (`guid`)
+CREATE TABLE entries (
+  entry_id int(11) NOT NULL AUTO_INCREMENT,
+  location_road longtext NOT NULL,
+  location_bound tinytext NOT NULL,
+  location_area mediumtext NOT NULL,
+  traffic tinytext NOT NULL,
+  timestamp mediumtext NOT NULL,
+  guid bigint(20) NOT NULL,
+  update_timestamp datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (entry_id),
+  UNIQUE KEY id_UNIQUE (entry_id),
+  UNIQUE KEY guid_UNIQUE (guid)
 ) ENGINE=InnoDB AUTO_INCREMENT=6461457 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
