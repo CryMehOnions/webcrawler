@@ -11,7 +11,14 @@ entryList = []
 for data in dataDict:
 	guid = data['guid'].split('/')[4]
 	title = data.title.split('-')
-	entry = {'location_road' : title[0], 'location_area' : title[1], 'location_bound' : title[2], 'traffic' : data.description, 'guid' : int(guid), 'timestamp' : data.published}
+
+	road = title[0]
+	bound = title[-1]
+	title.remove(road)
+	title.remove(bound)
+	area = "-".join(title)
+
+	entry = {'location_road' : road, 'location_area' : area, 'location_bound' : bound, 'traffic' : data.description, 'guid' : int(guid), 'timestamp' : data.published}
 	entryList.append(entry)
 
 try:
