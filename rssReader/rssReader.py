@@ -33,4 +33,4 @@ cur = conn.cursor()
 cur.executemany(insertQuery, tuple(entryList))
 
 conn.commit()
-conn.close()	
+conn.close()
