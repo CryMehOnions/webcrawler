@@ -8,7 +8,8 @@ dataDict = feedparser.parse(feedURL)
 entryList = []
 
 for data in dataDict:
-	title = data['title'].split('-')
+	print data.title
+	title = data.title.split('-')
 	entry = {'location_road' : title[0], 'location_area' : title[1], 'location_bound' : title[2], 'traffic' : data.description, 'guid' : int(data.guid), 'update_timestamp' : data.pubDate}
 	entryList.append(entry)
 
